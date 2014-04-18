@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.sai.javafx.calendar.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+
+<AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="603.0" prefWidth="799.0" xmlns:fx="http://javafx.com/fxml" fx:controller="stockfinder.handler.Admin">
+  <children>
+    <SplitPane id="splitPaneVertical1" dividerPositions="0.5008665511265165" focusTraversable="true" layoutX="16.0" layoutY="13.0" orientation="VERTICAL" prefHeight="579.0" prefWidth="778.0">
+      <items>
+        <AnchorPane id="anchorPane3" minHeight="0.0" minWidth="0.0" prefHeight="295.0" prefWidth="776.0">
+          
+                <GridPane id="gridPane1" alignment="TOP_RIGHT" prefHeight="286.0" prefWidth="776.0">
+                  <children>
+                    <RadioButton id="RadioButton2" fx:id="cdata" onAction="#handlenotWeekdatachangeAction" selected="true" text="当日数据" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                      <toggleGroup>
+                        <ToggleGroup fx:id="dealevent" />
+                      </toggleGroup>
+                    </RadioButton>
+                    <RadioButton id="RadioButton1" fx:id="fromfile" onAction="#handlenotWeekdatachangeAction" text="大智慧文件读取（默认2012.1.1-至今）" toggleGroup="$dealevent" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                    <RadioButton id="RadioButton3" fx:id="ften" onAction="#handlenotWeekdatachangeAction" text="大智慧F10数据" toggleGroup="$dealevent" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                    <RadioButton id="RadioButton4" fx:id="weekdata" onAction="#handleWeekdatachangeAction" text="周线数据" toggleGroup="$dealevent" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                    <RadioButton id="radioButton2" fx:id="oneweek" selected="true" text="本周" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                      <toggleGroup>
+                        <ToggleGroup fx:id="weekdatagrp" />
+                      </toggleGroup>
+                    </RadioButton>
+                    <RadioButton id="radioButton2" fx:id="allweek" text="全部周" toggleGroup="$weekdatagrp" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                    <ProgressIndicator id="progressIndicator1" fx:id="statusindx1" progress="0.0" GridPane.columnIndex="3" GridPane.rowIndex="0" />
+                    <ProgressIndicator id="progressIndicator1" fx:id="statusindx2" progress="0.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                    <Label id="label7" fx:id="timer1" text="00:00:00" GridPane.columnIndex="4" GridPane.rowIndex="0" />
+                    <Label id="label7" fx:id="timer2" text="00:00:00" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                    <Label id="label7" fx:id="timer3" text="00:00:00" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                    <ProgressIndicator id="progressIndicator1" fx:id="statusindx3" progress="0.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                    <ProgressIndicator id="progressIndicator1" fx:id="statusindx4" progress="0.0" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                    <Label id="label7" fx:id="timer4" text="00:00:00" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+                    <!--<FXCalendar id="textField1" fx:id="startdateCalendar"  />-->
+                    <ProgressIndicator id="progressIndicator1" fx:id="statusindx5" progress="0.0" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                    <Label id="label7" fx:id="timer5" text="00:00:00" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+                    <ProgressIndicator id="progressIndicator2" fx:id="statusindx6" progress="0.0" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+                    <Label id="label5" fx:id="timer6" text="00:00:00" GridPane.columnIndex="4" GridPane.rowIndex="5" />
+                    <RadioButton id="RadioButton5" fx:id="ztgsdata" onAction="#handlenotWeekdatachangeAction" text="涨停个数数据" toggleGroup="$dealevent" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                    <RadioButton id="radioButton1" fx:id="liangrongupdate" text="更新两融标的证券" toggleGroup="$dealevent" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+                    <Label id="label1" fx:id="x1" text="密码：" GridPane.columnIndex="0" GridPane.rowIndex="7" />
+                    <PasswordField id="passwordField1" fx:id="password" prefWidth="101.0" promptText="批量数据的密码" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                    <Button id="button1" onAction="#handleUpateAction" text="更新" GridPane.columnIndex="4" GridPane.rowIndex="7" />
+                    <TextField id="textField2" fx:id="startdate" prefWidth="87.0" text="2012-01-01" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  </children>
+                  <columnConstraints>
+                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="256.0" minWidth="10.0" prefWidth="235.0" />
+                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="153.0" minWidth="10.0" prefWidth="117.0" />
+                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="155.0" minWidth="10.0" prefWidth="113.0" />
+                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="155.0" minWidth="10.0" prefWidth="155.0" />
+                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="155.0" minWidth="10.0" prefWidth="155.0" />
+                  </columnConstraints>
+                  <rowConstraints>
+                    <RowConstraints maxHeight="36.0" minHeight="10.0" prefHeight="36.0" vgrow="SOMETIMES" />
+                    <RowConstraints maxHeight="36.0" minHeight="10.0" prefHeight="36.0" vgrow="SOMETIMES" />
+                    <RowConstraints maxHeight="36.0" minHeight="10.0" prefHeight="36.0" vgrow="SOMETIMES" />
+                    <RowConstraints maxHeight="36.0" minHeight="10.0" prefHeight="36.0" vgrow="SOMETIMES" />
+                    <RowConstraints maxHeight="36.0" minHeight="10.0" prefHeight="36.0" vgrow="SOMETIMES" />
+                    <RowConstraints maxHeight="36.0" minHeight="10.0" prefHeight="36.0" vgrow="SOMETIMES" />
+                    <RowConstraints maxHeight="36.0" minHeight="10.0" prefHeight="36.0" vgrow="SOMETIMES" />
+                    <RowConstraints maxHeight="36.0" minHeight="10.0" prefHeight="36.0" vgrow="SOMETIMES" />
+                  </rowConstraints>
+                </GridPane>
+
+            <Label id="label3" fx:id="msg" layoutX="51.0" layoutY="253.0" />
+          
+        </AnchorPane>
+        <AnchorPane id="anchorPane2" minHeight="0.0" minWidth="0.0" prefHeight="231.0" prefWidth="776.0">
+          <children>
+            <Label id="label1" layoutX="48.0" layoutY="46.0" text="大智慧日数据(上海)：" />
+            <TextField id="textField2" fx:id="datafile_path_sh" disable="true" layoutX="162.0" layoutY="46.0" prefWidth="200.0" text="C:\\htdzh\\DATA\\SHase\\Day\\" />
+            <TextField id="textField2" fx:id="datafile_path_sz" disable="true" layoutX="162.0" layoutY="80.0" prefWidth="200.0" text="C:\\htdzh\\DATA\\SZnse\\Day\\" />
+            <Label id="label1" layoutX="48.0" layoutY="83.0" text="大智慧日数据(深圳)：" />
+            <TextField id="textField2" fx:id="f10_file_path_sh" disable="true" layoutX="162.0" layoutY="123.0" prefWidth="200.0" text="C:\\htdzh\\DATA\\SHase\\Base\\" />
+            <Label id="label1" layoutX="48.0" layoutY="126.0" text="大智慧F10(上海)：" />
+            <TextField id="textField2" fx:id="f10_file_path_sz" disable="true" layoutX="163.0" layoutY="161.0" prefWidth="200.0" text="C:\\htdzh\\DATA\\SZnse\\Base\\" />
+            <Label id="label1" layoutX="49.0" layoutY="164.0" text="大智慧F10(深圳)：" />
+            <Label id="label1" layoutX="49.0" layoutY="223.0" text="密码：" />
+            <PasswordField id="passwordField1" fx:id="systemsettingpswd" layoutX="89.0" layoutY="220.0" prefWidth="101.0" promptText="系统设置变更密码" />
+            <Button id="button1" layoutX="708.0" layoutY="252.0" onAction="#handleUpateSysSettingAction" text="更新" />
+            <Label id="label2" fx:id="msg2" layoutX="49.0" layoutY="248.0" />
+            <Label id="label1" layoutX="49.0" layoutY="191.0" text="涨停个数数据：" />
+            <TextField id="textField2" fx:id="ztdata_path" disable="true" layoutX="162.0" layoutY="191.0" prefWidth="200.0" text="D:\\Y_private\\\stock\\bankuai_data\\ztgs.txt" />
+            <Label id="label4" layoutX="393.0" layoutY="53.0" text="两融标的：" />
+            <TextField id="textField1" fx:id="liangrong_path" layoutX="453.0" layoutY="49.0" prefWidth="200.0" text="D:\\Y_private\\stock\\ht_stock.csv" />
+          </children>
+        </AnchorPane>
+      </items>
+    </SplitPane>
+  </children>
+</AnchorPane>
